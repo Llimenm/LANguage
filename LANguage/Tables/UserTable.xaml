@@ -1,0 +1,219 @@
+﻿<Page x:Class="LANguage.Tables.UserTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LANguage.Tables"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="518"
+      Title="UserTable">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF05A0FF"/>
+            <Setter Property="FontFamily" Value="Comic Sans Ms"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid
+        Background="#FFE7FABF">
+        <Grid.Clip>
+            <RectangleGeometry Rect="0,0,518,550" RadiusX="20" RadiusY="20"/>
+        </Grid.Clip>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="470"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <ListBox
+            Grid.Row="1"
+            Background="#FFE7FABF"
+            x:Name="listBoxTableClient" 
+            SelectionChanged="listBoxTableClient_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="132"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="26"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="12">
+                                Id:
+                        </Label>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Content="{Binding Path=ID}">
+                            
+                        </Label>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontSize="12">
+                            Фамилия:
+                        </Label>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Content="{Binding Path = LastName}">
+                        </Label>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontSize="12">
+                            Имя:
+                        </Label>
+                        <Label
+                            x:Name="firstNameLabel"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Content="{Binding Path = FirstName}">
+                        </Label>
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            FontSize="12">
+                            Отчество:
+                        </Label>
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Content="{Binding Path = Patronymic}">
+                        </Label>
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            FontSize="12">
+                            Дата рождения:
+                        </Label>
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            FontSize="12"
+                            Content="{Binding Path = Birthday}">
+                        </Label>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontSize="12">
+                            Телефон:
+                        </Label>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            FontSize="12"
+                            Content="{Binding Path = Phone}">
+                        </Label>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            FontSize="12">
+                            Эл. почта:
+                        </Label>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            FontSize="12"
+                            Content="{Binding Path = Email}">
+                        </Label>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            FontSize="12">
+                            Дата добавления:
+                        </Label>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            FontSize="12"
+                            Content="{Binding Path = RegistrationDate}">
+                        </Label>
+                        <Label
+                            Grid.Row="3"
+                            Grid.Column="2"
+                            FontSize="12">
+                            Дата посл. посещения:
+                        </Label>
+                        <Label
+                            Grid.Row="4"
+                            Grid.Column="2"
+                            FontSize="12">
+                            Кол-во посещений:
+                        </Label>
+                        <Label
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            FontSize="12">
+                            Тэги:
+                        </Label>
+                        <Label
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            FontSize="12"
+                            Content="{Binding Path = Tag}">
+                        </Label>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+
+        <Grid 
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Column="0"
+                x:Name="createTupleButton" Click="createTupleButton_Click">
+                Добавить
+            </Button>
+
+            <Button
+                Grid.Column="1"
+                x:Name="changeTupleButton">
+                Изменить
+            </Button>
+
+            <Button
+                Grid.Column="2"
+                x:Name="deleteTupleButton" Click="deleteTupleButton_Click">
+                Удалить
+            </Button>
+
+            <Button
+                Grid.Column="3"
+                x:Name="openVisitsTableButton">
+                Посещения
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
