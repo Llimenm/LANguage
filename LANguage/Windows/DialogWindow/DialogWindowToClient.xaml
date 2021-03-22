@@ -87,5 +87,6 @@
 
         <Button x:Name="addButton" Content="Добавить" Grid.Row="10" Grid.Column="1" Margin="15,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Click="addButton_Click"/>
         <Button x:Name="cancelButton" Content="Отмена" Grid.Row="10" Grid.Column="1" Margin="0,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        <Button Content="Изменить" Grid.Column="2" Grid.Row="4" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
