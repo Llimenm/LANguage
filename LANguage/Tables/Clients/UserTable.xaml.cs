@@ -90,7 +90,7 @@ namespace LANguage.Tables
             }
         }//Кнопка измениния данных выбранного клиента
 
-        private void openVisitsTableButton_Click(object sender, RoutedEventArgs e) // Кнопка открытия посещений выбранного клиента
+        private void openVisitsTableButton_Click(object sender, RoutedEventArgs e) 
         {
             if (selectedItem != null)
             {
@@ -100,6 +100,6 @@ namespace LANguage.Tables
                 visits.ShowDialog();
             }
 
-        }
+        } // Кнопка открытия посещений выбранного клиента
     }
 }

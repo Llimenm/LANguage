@@ -9,7 +9,11 @@
         Title="Лангуаге"
         Height="600"
         Width="880"
-        ResizeMode="NoResize">
+        MinHeight="600"
+        MinWidth="880"
+        MaxHeight="600"
+        MaxWidth="880"
+        ResizeMode="CanResize">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF05A0FF"/>
