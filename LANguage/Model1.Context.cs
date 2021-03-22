@@ -15,10 +15,10 @@ namespace LANguage
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class LangaugeDB : DbContext
+    public partial class LanguageDB : DbContext
     {
-        public LangaugeDB()
-            : base("name=LangaugeDB")
+        public LanguageDB()
+            : base("name=LanguageDB")
         {
         }
     

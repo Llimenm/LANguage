@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Projects\1Session\LANguage\LANguage\obj\Debug\
+C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\
 LANguage
 none
 false
 DEBUG;TRACE
-E:\Projects\1Session\LANguage\LANguage\App.xaml
-2-31197674
+C:\Users\Lim\source\repos\LANguage\LANguage\App.xaml
+3-1169645931
 21750853300
-25-1273738958
-201854937752
-MainWindow.xaml;Tables\UserTable.xaml;
+241557352571
+202011661202
+DialogWindow\DialogWindowToClient.xaml;MainWindow.xaml;Tables\Clients\UserTable.xaml;
 
 False
 

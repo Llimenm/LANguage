@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b3f24066d38542669ed52798e5c450ee" Name="Diagram1">
+      <Diagram DiagramId="6e22a74f788b47a4a4ce0357a2b445c3" Name="Diagram1">
         <EntityTypeShape EntityType="LANguageModel.Client" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LANguageModel.ClientService" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LANguageModel.DocumentByService" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
@@ -17,11 +17,11 @@
         <EntityTypeShape EntityType="LANguageModel.ServicePhoto" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LANguageModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LANguageModel.Tag" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
-        <AssociationConnector Association="LANguageModel.FK_Client_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="LANguageModel.FK_ClientService_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="LANguageModel.FK_ClientService_Service" ManuallyRouted="false" />
-        <AssociationConnector Association="LANguageModel.FK_DocumentByService_ClientService" ManuallyRouted="false" />
-        <AssociationConnector Association="LANguageModel.FK_ProductSale_ClientService" ManuallyRouted="false" />
+        <AssociationConnector Association="LANguageModel.FK_client_import_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="LANguageModel.FK_Sheet1__Client" ManuallyRouted="false" />
+        <AssociationConnector Association="LANguageModel.FK_DocumentByService_Sheet1_" ManuallyRouted="false" />
+        <AssociationConnector Association="LANguageModel.FK_ProductSale_Sheet1_" ManuallyRouted="false" />
+        <AssociationConnector Association="LANguageModel.FK_Sheet1__Service" ManuallyRouted="false" />
         <AssociationConnector Association="LANguageModel.FK_Product_Manufacturer" ManuallyRouted="false" />
         <AssociationConnector Association="LANguageModel.FK_ProductPhoto_Product" ManuallyRouted="false" />
         <AssociationConnector Association="LANguageModel.FK_ProductSale_Product" ManuallyRouted="false" />

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LANguage"
         mc:Ignorable="d"
-        Icon="Images/school_logo.ico"
+        Icon="Resources\Images\Logo\school_logo.ico"
         Title="Лангуаге"
         Height="600"
-        Width="800"
+        Width="880"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Button">
@@ -35,7 +35,7 @@
             Grid.Row="0"
             Width="64"
             Height="64"
-            Source="Images/school_logo.png">
+            Source = "Resources\Images\Logo\school_logo.png">
         </Image>
 
         <TextBlock
@@ -87,7 +87,7 @@
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Width="518"
+            Width="578"
             Height="550">
         </Frame>
     </Grid>

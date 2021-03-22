@@ -15,13 +15,13 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
-    <Property Name="Birthday" Type="date" />
-    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="Patronimyc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="Birtday" Type="date" />
     <Property Name="Email" Type="nvarchar" MaxLength="255" />
-    <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="GenderCode" Type="nchar" MaxLength="1" Nullable="false" />
-    <Property Name="PhotoPath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RegistrationDate" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="ClientService">
     <Key>
@@ -29,8 +29,8 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClientID" Type="int" Nullable="false" />
-    <Property Name="ServiceID" Type="int" Nullable="false" />
     <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="ServiceID" Type="int" Nullable="false" />
     <Property Name="Comment" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="DocumentByService">
@@ -156,7 +156,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Client_Gender">
+  <Association Name="FK_client_import_Gender">
     <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
     <ReferentialConstraint>
@@ -164,43 +164,19 @@
         <PropertyRef Name="Code" />
       </Principal>
       <Dependent Role="Client">
-        <PropertyRef Name="GenderCode" />
+        <PropertyRef Name="Gender" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ClientService_Client">
-    <End Role="Client" Type="Self.Client" Multiplicity="1" />
-    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Client">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ClientService">
-        <PropertyRef Name="ClientID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ClientService_Service">
-    <End Role="Service" Type="Self.Service" Multiplicity="1" />
-    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Service">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ClientService">
-        <PropertyRef Name="ServiceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DocumentByService_ClientService">
+  <Association Name="FK_DocumentByService_Sheet1$">
     <End Role="ClientService" Type="Self.ClientService" Multiplicity="1" />
-    <End Role="DocumentByService" Type="Self.DocumentByService" Multiplicity="*" />
+    <End Role="DocumentByService" Type="Self.DocumentByService" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="ClientService">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="DocumentByService">
-        <PropertyRef Name="ClientServiceID" />
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -228,18 +204,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProductSale_ClientService">
-    <End Role="ClientService" Type="Self.ClientService" Multiplicity="0..1" />
-    <End Role="ProductSale" Type="Self.ProductSale" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ClientService">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ProductSale">
-        <PropertyRef Name="ClientServiceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ProductSale_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="ProductSale" Type="Self.ProductSale" Multiplicity="*" />
@@ -249,6 +213,18 @@
       </Principal>
       <Dependent Role="ProductSale">
         <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSale_Sheet1$">
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="0..1" />
+    <End Role="ProductSale" Type="Self.ProductSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientService">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSale">
+        <PropertyRef Name="ClientServiceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -264,7 +240,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TagOfClient_Client">
+  <Association Name="FK_Sheet1$_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ClientService">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sheet1$_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ClientService">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagOfClient_client_import">
     <End Role="Client" Type="Self.Client" Multiplicity="1" />
     <End Role="TagOfClient" Type="Self.TagOfClient" Multiplicity="*" />
     <ReferentialConstraint>
@@ -342,19 +342,11 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="AttachedProduct" EntitySet="AttachedProduct" />
     </AssociationSet>
-    <AssociationSet Name="FK_Client_Gender" Association="Self.FK_Client_Gender">
+    <AssociationSet Name="FK_client_import_Gender" Association="Self.FK_client_import_Gender">
       <End Role="Gender" EntitySet="Gender" />
       <End Role="Client" EntitySet="Client" />
     </AssociationSet>
-    <AssociationSet Name="FK_ClientService_Client" Association="Self.FK_ClientService_Client">
-      <End Role="Client" EntitySet="Client" />
-      <End Role="ClientService" EntitySet="ClientService" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ClientService_Service" Association="Self.FK_ClientService_Service">
-      <End Role="Service" EntitySet="Service" />
-      <End Role="ClientService" EntitySet="ClientService" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DocumentByService_ClientService" Association="Self.FK_DocumentByService_ClientService">
+    <AssociationSet Name="FK_DocumentByService_Sheet1$" Association="Self.FK_DocumentByService_Sheet1$">
       <End Role="ClientService" EntitySet="ClientService" />
       <End Role="DocumentByService" EntitySet="DocumentByService" />
     </AssociationSet>
@@ -366,19 +358,27 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="ProductPhoto" EntitySet="ProductPhoto" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProductSale_ClientService" Association="Self.FK_ProductSale_ClientService">
-      <End Role="ClientService" EntitySet="ClientService" />
-      <End Role="ProductSale" EntitySet="ProductSale" />
-    </AssociationSet>
     <AssociationSet Name="FK_ProductSale_Product" Association="Self.FK_ProductSale_Product">
       <End Role="Product" EntitySet="Product" />
+      <End Role="ProductSale" EntitySet="ProductSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSale_Sheet1$" Association="Self.FK_ProductSale_Sheet1$">
+      <End Role="ClientService" EntitySet="ClientService" />
       <End Role="ProductSale" EntitySet="ProductSale" />
     </AssociationSet>
     <AssociationSet Name="FK_ServicePhoto_Service" Association="Self.FK_ServicePhoto_Service">
       <End Role="Service" EntitySet="Service" />
       <End Role="ServicePhoto" EntitySet="ServicePhoto" />
     </AssociationSet>
-    <AssociationSet Name="FK_TagOfClient_Client" Association="Self.FK_TagOfClient_Client">
+    <AssociationSet Name="FK_Sheet1$_Client" Association="Self.FK_Sheet1$_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientService" EntitySet="ClientService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sheet1$_Service" Association="Self.FK_Sheet1$_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ClientService" EntitySet="ClientService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagOfClient_client_import" Association="Self.FK_TagOfClient_client_import">
       <End Role="Client" EntitySet="Client" />
       <End Role="TagOfClient" EntitySet="TagOfClient" />
     </AssociationSet>

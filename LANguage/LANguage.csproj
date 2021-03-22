@@ -72,14 +72,11 @@
     <Compile Include="ClientService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DialogWindow\DialogWindowToClient.xaml.cs">
+      <DependentUpon>DialogWindowToClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DocumentByService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\UserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -87,10 +84,20 @@
     <Compile Include="Manufacturer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -116,12 +123,16 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tables\UserTable.xaml.cs">
+    <Compile Include="Tables\Clients\UserTable.xaml.cs">
       <DependentUpon>UserTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="DialogWindow\DialogWindowToClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -134,22 +145,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Tables\UserTable.xaml">
+    <Page Include="Tables\Clients\UserTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -163,9 +164,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Forms\UserForm.resx">
-      <DependentUpon>UserForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -187,14 +185,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\school_logo.png" />
+    <Resource Include="Resources\Images\Logo\school_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\school_logo.ico" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Resource Include="Resources\Images\Logo\school_logo.ico">
+      <CustomToolNamespace>LANguage</CustomToolNamespace>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model1.Context.tt">
@@ -207,6 +203,110 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Tables\Clients\Клиенты\1.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\10.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\11.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\12.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\13.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\14.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\15.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\16.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\17.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\18.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\19.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\2.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\20.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\21.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\22.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\23.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\24.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\25.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\26.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\27.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\28.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\29.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\3.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\30.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\31.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\32.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\33.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\34.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\35.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\36.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\37.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\38.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\39.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\4.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\40.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\41.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\42.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\43.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\44.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\47.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\48.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\5.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\6.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\7.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\8.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\9.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m1.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m10.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m11.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m12.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m13.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m14.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m15.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m16.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m17.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m18.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m19.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m2.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m20.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m21.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m22.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m23.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m24.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m25.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m26.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m27.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m28.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m29.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m3.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m30.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m31.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m32.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m33.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m34.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m35.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m36.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m37.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m38.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m39.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m4.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m40.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m41.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m42.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m43.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m44.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m45.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m46.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m47.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m48.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m49.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m5.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m50.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m6.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m7.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m8.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m9.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m96.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m97.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m98.jpg" />
+    <Resource Include="Tables\Clients\Клиенты\m99.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

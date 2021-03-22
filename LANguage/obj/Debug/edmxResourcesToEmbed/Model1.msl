@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище LANguageModelContainer" CdmEntityContainer="LangaugeDB">
+  <EntityContainerMapping StorageEntityContainer="Хранилище LANguageModelContainer" CdmEntityContainer="LanguageDB">
     <EntitySetMapping Name="Client">
       <EntityTypeMapping TypeName="LANguageModel.Client">
         <MappingFragment StoreEntitySet="Client">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
-          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Patronimyc" ColumnName="Patronimyc" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="GenderCode" ColumnName="GenderCode" />
           <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Birtday" ColumnName="Birtday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -22,8 +22,8 @@
         <MappingFragment StoreEntitySet="ClientService">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
           <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
         </MappingFragment>
       </EntityTypeMapping>
