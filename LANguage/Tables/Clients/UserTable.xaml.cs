@@ -5,13 +5,14 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using LANguage.Windows;
 using LANguage.DialogWindow;
 namespace LANguage.Tables
 {
     public partial class UserTable : Page
     {
         LanguageDB db = new LanguageDB();
-        Client selectedItem;
+        Client selectedItem = null;
         DialogWindowToClient dialogWindow;
         public UserTable()
         {
@@ -73,7 +74,7 @@ namespace LANguage.Tables
         public void listBoxTableClient_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedItem = listBoxTableClient.SelectedItem as Client;
-        }
+        } // Выбор нужного клиента для манипуляций
 
         private void changeTupleButton_Click(object sender, RoutedEventArgs e)
         {
@@ -87,6 +88,18 @@ namespace LANguage.Tables
                     db.SaveChanges();
                 }
             }
+        }//Кнопка измениния данных выбранного клиента
+
+        private void openVisitsTableButton_Click(object sender, RoutedEventArgs e) // Кнопка открытия посещений выбранного клиента
+        {
+            if (selectedItem != null)
+            {
+                ClientsServices visits = new ClientsServices();
+                db.ClientService.Load();
+                visits.listBoxTableClientsServices.ItemsSource = db.ClientService.Local.ToBindingList().Where(o => o.ClientID == selectedItem.ID);
+                visits.ShowDialog();
+            }
+
         }
     }
 }

@@ -44,8 +44,10 @@ C:\Users\Lim\Source\Repos\LANguage\LANguage\obj\Debug\LANguage.csproj.CoreCompil
 C:\Users\Lim\Source\Repos\LANguage\LANguage\obj\Debug\LANguage.csproj.CopyComplete
 C:\Users\Lim\Source\Repos\LANguage\LANguage\obj\Debug\LANguage.exe
 C:\Users\Lim\Source\Repos\LANguage\LANguage\obj\Debug\LANguage.pdb
-C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\DialogWindow\DialogWindowToClient.g.cs
-C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\DialogWindow\DialogWindowToClient.baml
 C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\LANguage.csprojAssemblyReference.cache
 C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Tables\Clients\UserTable.g.cs
 C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Tables\Clients\UserTable.baml
+C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Windows\DialogWindow\DialogWindowToClient.g.cs
+C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Windows\DialogWindow\DialogWindowToClient.baml
+C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Windows\ClientsServices.g.cs
+C:\Users\Lim\source\repos\LANguage\LANguage\obj\Debug\Windows\ClientsServices.baml

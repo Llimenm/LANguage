@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LANguage.DialogWindow"
         mc:Ignorable="d"
         Title="Добавление клиента"
-        Icon="..\Resources\Images\Logo\school_logo.ico"
+        Icon="..\..\Resources\Images\Logo\school_logo.ico"
         Height="490" 
         Width="800" 
         Foreground="Black"
@@ -14,9 +14,6 @@
         ResizeMode="NoResize"
         Activated="Window_Activated"
         x:Name="thisWindow">
-    <Window.Clip>
-        <RectangleGeometry RadiusX="20" RadiusY="20" Rect="0,0,800,490"/>
-    </Window.Clip>
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF05A0FF"/>
@@ -82,7 +79,7 @@
         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path = Patronimyc, Mode = TwoWay}"/>
         <TextBox x:Name="genderBox" Grid.Row="4" Grid.Column="1" Text="{Binding Path = Gender, Mode = TwoWay}"/>
         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path = Phone, Mode = TwoWay}"/>
-        <DatePicker Grid.Row="6" Grid.Column="1" Text="{Binding Path = Birtday, Mode = TwoWay}"/>
+        <DatePicker Grid.Row="6" Grid.Column="1" DisplayDate="{Binding Path = Birtday, Mode = TwoWay}" FirstDayOfWeek="Wednesday"/>
         <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path = Email, Mode = TwoWay}"/>
         <TextBlock HorizontalAlignment="Left" Grid.Row="8" Grid.Column="1" Text="{Binding Path = RegistrationDate, Mode = TwoWay}"/>
 

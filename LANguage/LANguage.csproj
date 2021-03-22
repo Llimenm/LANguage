@@ -72,7 +72,10 @@
     <Compile Include="ClientService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DialogWindow\DialogWindowToClient.xaml.cs">
+    <Compile Include="Windows\ClientsServices.xaml.cs">
+      <DependentUpon>ClientsServices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DialogWindow\DialogWindowToClient.xaml.cs">
       <DependentUpon>DialogWindowToClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
@@ -129,7 +132,11 @@
     <Compile Include="Tag.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="DialogWindow\DialogWindowToClient.xaml">
+    <Page Include="Windows\ClientsServices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DialogWindow\DialogWindowToClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
