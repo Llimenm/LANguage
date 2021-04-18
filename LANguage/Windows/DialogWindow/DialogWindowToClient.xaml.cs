@@ -10,7 +10,7 @@ namespace LANguage.DialogWindow
     /// </summary>
     public partial class DialogWindowToClient : Window
     {
-        public string pathToPhoto = null;
+        public string pathToPhoto = null; // Путь до фото пользователя
         LanguageDB db = new LanguageDB();
         public DialogWindowToClient()
         {
@@ -22,7 +22,11 @@ namespace LANguage.DialogWindow
             DialogResult = true;
             this.Close();
         }
-
+        /// <summary>
+        /// Событие, при котором выставляется изображение и пол пользователя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Activated(object sender, EventArgs e)
         {
             if (pathToPhoto != null)

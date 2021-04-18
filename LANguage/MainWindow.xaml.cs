@@ -22,8 +22,12 @@ namespace LANguage
         {
             InitializeComponent();
         }
-
-        private void clintTableButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Событие открытия фрейма с таблицей пользователей
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clintTableButton_Click(object sender, RoutedEventArgs e) 
         {
             UserTable userTable = new UserTable();
             frameForTables.Navigate(userTable);
